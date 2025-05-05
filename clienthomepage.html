@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpNinja - Employer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #4399fa;
+    color: white;
+    padding: 1em 0;
+}
+
+header h1 {
+    display: inline;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210906/pngtree-high-tech-real-estate-blue-banner-technology-image_805815.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.hero h2 {
+    margin: 0.5em 0;
+}
+
+.cta-button {
+    background: #4399fa;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+ .features {
+    background-image: url('https://img.freepik.com/free-vector/simple-blue-gradient-background-vector-business_53876-143439.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+ }
+
+.features, .Our-Platform, .get-started {
+    padding: 2em 0;
+}
+
+.features h2, .Our-Platform h2, .get-started h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.feature-item {
+    margin-bottom: 1em;
+}
+
+blockquote {
+    background: #f4f4f4;
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 5px solid #4399fa;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.5em;
+    text-align: right;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+footer a {
+    color: #4399fa;
+    text-decoration: none;
+}
+
+.social-media a {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+img {
+ float: right;
+ width: 600px;
+ margin: -65px 5px 0 5px;
+}
+
+.Our-Platform p {
+    text-align: justify;
+}
+
+.Our-Platform li ::marker {
+ color: black;
+ font-size: 1.875em;
+}
+</style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HelpNinja</h1>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#Our-Platform">Our Platform</a></li>
+                    <li><a href="#get-started">Get Started</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Discover Top Talent and Elevate Your Team</h2>
+            <p>Simplify your recruitment with HelpNinja, designed to connect you with the right candidates efficiently.</p>
+            <a href="#get-started" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature-item">
+                <h3>Job Posting</h3>
+                <p>Create and manage job listings with ease.</p>
+            </div>
+           
+            <div class="feature-item">
+                <h3>Candidate Profiles</h3>
+                <p>View comprehensive profiles, including resumes and portfolios. <img src="https://assets-global.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba44608b50448c4_e%20recruitment.png"> </p>
+            </div>
+            <div class="feature-item">
+                <h3>Communication Tools</h3>
+                <p>Connect directly with candidates via secure messaging.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Analytics and Reporting</h3>
+                <p>Gain insights into your hiring process with detailed analytics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Our-Platform" class="Our-Platform">
+        <div class="container">
+            <h2>Our Platform</h2>
+            <blockquote>
+                <p>Reach the appropriate individuals at the right time and location. Customize your recruiting advertising plan for job boards, social media, and more. How we can assist you: </p>               
+              <ul>
+                <li>Attract the right candidates for your vacancies</li>
+                <li>Reduce your recruitment spend</li>
+                <li>Increase your exposure as an employer of choice</li>
+              </ul>
+            </blockquote>
+            
+        </div>
+    </section>
+
+    <section id="get-started" class="get-started">
+        <div class="container">
+            <h2>Get Started Today</h2>
+            <ol>
+                <li><strong>Sign Up:</strong> Create an employer account in minutes.</li>
+                <li><strong>Post Jobs:</strong> List your job openings and attract top candidates.</li>
+                <li><strong>Connect:</strong> Engage with applicants and find the perfect fit for your team.</li>
+            </ol>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HelpNinja. All Rights Reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+            <div class="social-media">
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
