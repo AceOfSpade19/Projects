@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonance Nexus - Action RPG Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        body{
+            background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2VpcTZmNTA5ajlqc3VrYjdrMGwwbzVtaDJqYWpyMDJzbTRwbGwybiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6u2bEt4Wy9NqLv8V1N/giphy.gif');
+            background-size: cover;
+
+            height: 100vh;
+            padding:0;
+            margin:0;
+        }
+
+        :root {
+            --background: #1f2937;
+            --foreground: #ffffff;
+            --card: #2a3038;
+            --card-foreground: #ffffff;
+            --primary: #0891b2;
+            --primary-foreground: #ffffff;
+            --secondary: #4b5563;
+            --accent: #f97316;
+            --border: #374151;
+        }
+        
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-opensans { font-family: 'Open Sans', sans-serif; }
+        
+        .hero-bg {
+            
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .character-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(8, 145, 178, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(8, 145, 178, 0.5);
+        }
+        
+        .header-scrolled {
+            background: rgba(31, 41, 55, 0.95);
+            
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px currentColor;
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 20px rgba(8, 145, 178, 0.3); }
+            to { box-shadow: 0 0 30px rgba(8, 145, 178, 0.6); }
+        }
+    </style>
+</head>
+<body class="bg-gray-800 text-white font-opensans">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-cyan-600 rounded-lg flex items-center justify-center">
+                    <span class="text-xl font-montserrat font-black">RN</span>
+                </div>
+                <span class="text-2xl font-montserrat font-black neon-text text-cyan-400">Resonance Nexus</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#characters" class="hover:text-cyan-400 transition-colors">Characters</a>
+                <a href="#gameplay" class="hover:text-cyan-400 transition-colors">Gameplay</a>
+                <a href="#community" class="hover:text-cyan-400 transition-colors">Community</a>
+                <a href="#news" class="hover:text-cyan-400 transition-colors">News</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="bg-cyan-600 hover:bg-cyan-700 px-6 py-2 rounded-lg font-semibold transition-colors pulse-glow">
+                    Play Now
+                </button>
+                <button id="mobile-menu" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-6xl md:text-8xl font-montserrat font-black mb-6 neon-text text-cyan-400">
+                RESONANCE NEXUS
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
+                Enter a world where reality bends to your will. Master elemental powers, collect legendary resonators, and forge your destiny in this epic action RPG adventure.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-cyan-600 hover:bg-cyan-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all glow-effect">
+                    Start Your Journey
+                </button>
+                <button class="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">
+                    Watch Trailer
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-montserrat font-black text-center mb-4 neon-text text-cyan-400">
+                Legendary Resonators
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+                Discover powerful allies with unique abilities and compelling stories. Each resonator brings their own elemental mastery to your team.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Character Card 1 -->
+                <div class="character-card rounded-xl p-6 group cursor-pointer">
+                    <div class="aspect-square mb-4 rounded-lg overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/36/2c/00/362c00f49cf1a052d77f5b85cd7670b7.jpg" 
+                             alt="Tanjiro Kamado" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-montserrat font-bold mb-2 text-cyan-400">Tanjiro Kamado</h3>
+                    <p class="text-gray-400 mb-4">The one who wields extraordinary powers, including a heightened sense of smell, mastery of Water Breathing techniques, and the legendary Sun Breathing style, making him a formidable warrior against demons.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm bg-cyan-600 px-3 py-1 rounded-full">Water</span>
+                        <span class="text-sm bg-red-500 px-3 py-1 rounded-full">Fire</span>
+                        <span class="text-orange-500 font-semibold">★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- Character Card 2 -->
+                <div class="character-card rounded-xl p-6 group cursor-pointer">
+                    <div class="aspect-square mb-4 rounded-lg overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/2f/68/8c/2f688cddc3310820063466f6a5bb3277.jpg" 
+                             alt="Giyu Tomioka" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-montserrat font-bold mb-2 text-cyan-400">Giyu Tomioka</h3>
+                    <p class="text-gray-400 mb-4">He wields extraordinary powers, mastering the Water Breathing techniques and creating his own eleventh form, which make him a swift and lethal swordsman against demons.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm bg-cyan-600 px-3 py-1 rounded-full">Water</span>
+                        <span class="text-orange-500 font-semibold">★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- Character Card 3 -->
+                <div class="character-card rounded-xl p-6 group cursor-pointer">
+                    <div class="aspect-square mb-4 rounded-lg overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/0e/3e/65/0e3e65a572b5ab4a87ecb85f787092ad.jpg" 
+                             alt="Zenitsu Agatsuma" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-montserrat font-bold mb-2 text-cyan-400">Zenitsu Agatsuma</h3>
+                    <p class="text-gray-400 mb-4">He wields extraordinary powers, mastering the Thunder Breathing techniques, especially the First Form: Thunderclap and Flash, which he can perform with incredible speed and precision against demons.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm bg-yellow-500 px-3 py-1 rounded-full">Lightning</span>
+                        <span class="text-orange-500 font-semibold">★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-montserrat font-black mb-6 neon-text text-cyan-400">
+                        Dynamic Combat System
+                    </h2>
+                    <p class="text-gray-300 mb-8 text-lg">
+                        Experience fluid, real-time combat that combines strategic team building with fast-paced action. Master elemental reactions and unleash devastating combo attacks.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center">
+                                <span class="text-xl">⚡</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-cyan-400">Elemental Mastery</h4>
+                                <p class="text-gray-400">Combine different elements for powerful reactions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
+                                <span class="text-xl">🎯</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-orange-500">Strategic Depth</h4>
+                                <p class="text-gray-400">Build teams with synergistic abilities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-video rounded-xl overflow-hidden">
+                    <img src="https://i.pinimg.com/736x/4c/95/9b/4c959bc7fc0268da04b2e26f84694788.jpg" 
+                         alt="Gameplay Screenshot" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-montserrat font-black text-center mb-16 neon-text text-cyan-400">
+                Join the Community
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-cyan-600 transition-colors">
+                    <div class="w-16 h-16 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-2xl">💬</span>
+                    </div>
+                    <h3 class="text-xl font-montserrat font-bold mb-3 text-cyan-400">Discord Server</h3>
+                    <p class="text-gray-400 mb-4">Connect with fellow resonators, share strategies, and get the latest updates.</p>
+                    <button class="text-cyan-400 hover:text-cyan-300 font-semibold">Join Now →</button>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-orange-500 transition-colors">
+                    <div class="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-2xl">📺</span>
+                    </div>
+                    <h3 class="text-xl font-montserrat font-bold mb-3 text-orange-500">Twitch Streams</h3>
+                    <p class="text-gray-400 mb-4">Watch live gameplay, developer streams, and community events.</p>
+                    <button class="text-orange-500 hover:text-orange-400 font-semibold">Watch Live →</button>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-cyan-600 transition-colors">
+                    <div class="w-16 h-16 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-2xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-montserrat font-bold mb-3 text-cyan-400">Mobile App</h3>
+                    <p class="text-gray-400 mb-4">Manage your team, check events, and stay connected on the go.</p>
+                    <button class="text-cyan-400 hover:text-cyan-300 font-semibold">Download →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-montserrat font-black text-center mb-16 neon-text text-cyan-400">
+                Latest Updates
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-600 transition-colors">
+                    <img src="https://i.pinimg.com/1200x/37/a6/ff/37a6ff788d57b144bf09981619a26c0c.jpg" 
+                         alt="Update Banner" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cyan-400 font-semibold">Version 2.1</span>
+                        <h3 class="text-xl font-montserrat font-bold mt-2 mb-3">New Resonator: Void Walker</h3>
+                        <p class="text-gray-400 mb-4">Discover the mysterious powers of space manipulation with our newest 5-star resonator.</p>
+                        <span class="text-sm text-gray-500">December 15, 2024</span>
+                    </div>
+                </article>
+
+                <article class="bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-orange-500 transition-colors">
+                    <img src="https://i.pinimg.com/1200x/37/a6/ff/37a6ff788d57b144bf09981619a26c0c.jpg" 
+                         alt="Event Banner" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-orange-500 font-semibold">Limited Event</span>
+                        <h3 class="text-xl font-montserrat font-bold mt-2 mb-3">Resonance Festival</h3>
+                        <p class="text-gray-400 mb-4">Participate in special challenges and earn exclusive rewards during our anniversary celebration.</p>
+                        <span class="text-sm text-gray-500">December 10, 2024</span>
+                    </div>
+                </article>
+
+                <article class="bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-600 transition-colors">
+                    <img src="https://i.pinimg.com/1200x/37/a6/ff/37a6ff788d57b144bf09981619a26c0c.jpg" 
+                         alt="Balance Update" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cyan-400 font-semibold">Balance Update</span>
+                        <h3 class="text-xl font-montserrat font-bold mt-2 mb-3">Combat System Improvements</h3>
+                        <p class="text-gray-400 mb-4">Enhanced combat mechanics and character balance adjustments for better gameplay experience.</p>
+                        <span class="text-sm text-gray-500">December 8, 2024</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-cyan-600 rounded-lg flex items-center justify-center">
+                            <span class="text-xl font-montserrat font-black">RN</span>
+                        </div>
+                        <span class="text-xl font-montserrat font-black neon-text text-cyan-400">Resonance Nexus</span>
+                    </div>
+                    <p class="text-gray-400">Experience the ultimate action RPG adventure in a world of elemental mastery.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-montserrat font-bold mb-4 text-cyan-400">Game</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Download</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">System Requirements</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Patch Notes</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-montserrat font-bold mb-4 text-cyan-400">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Discord</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Reddit</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">YouTube</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-montserrat font-bold mb-4 text-cyan-400">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Bug Reports</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Resonance Nexus by Josh Mariano. All rights reserved. | Made with ❤️ for gamers worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Character card hover effects
+        document.querySelectorAll('.character-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+                card.style.boxShadow = '0 20px 40px rgba(8, 145, 178, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            // Add mobile menu functionality here
+            console.log('Mobile menu clicked');
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('#home');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.character-card, article').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
